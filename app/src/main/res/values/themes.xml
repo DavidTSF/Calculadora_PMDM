@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Calculadora" parent="Theme.Material3.DayNight.NoActionBar">
+
+    </style>
+    <style name="botonrecto" parent="Widget.AppCompat.Button"/>
+
+    <style name="Theme.Calculadora" parent="Base.Theme.Calculadora" />
+</resources>
