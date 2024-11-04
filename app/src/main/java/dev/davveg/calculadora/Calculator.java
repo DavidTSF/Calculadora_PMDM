@@ -8,32 +8,31 @@ public class Calculator {
      *   @author David Vega Trillo
      *   @return int
      */
-    public static int calcular(String cadena) {
-
-        if ( cadena.contains("+") ) {
+    public static double calcular(String cadena) {
+        if ( cadena.contains("-") ) {
+            String[] cadenas = cadena.split("-",2);
+            double num1 = calcular(cadenas[0]);
+            double num2 = calcular(cadenas[1]);
+            return num1-num2;
+        } else if ( cadena.contains("+") ) {
             String[] cadenas = cadena.split("\\+",2);
-            int num1 = calcular(cadenas[0]);
-            int num2 = calcular(cadenas[1]);
+            double num1 = calcular(cadenas[0]);
+            double num2 = calcular(cadenas[1]);
             return num1+num2;
         }else if ( cadena.contains("*") ) {
             String[] cadenas = cadena.split("\\*",2);
-            int num1 = calcular(cadenas[0]);
-            int num2 = calcular(cadenas[1]);
+            double num1 = calcular(cadenas[0]);
+            double num2 = calcular(cadenas[1]);
             return num1*num2;
-        }  else {
-            return Integer.parseInt(cadena.trim());
+        }else if ( cadena.contains("/") ) {
+            String[] cadenas = cadena.split("/",2);
+            double num1 = calcular(cadenas[0]);
+            double num2 = calcular(cadenas[1]);
+            return num1/num2;
+        } else {
+            return Double.parseDouble(cadena.trim());
         }
     }
 
-    public static int oldCalcular(String cadena) {
-        if ( cadena.contains("+") ) {
-            String[] cadenas = cadena.split("\\+",2);
-            int num1 = calcular(cadenas[0]);
-            int num2 = calcular(cadenas[1]);
-            return num1+num2;
-        } else {
-            return Integer.parseInt(cadena.trim());
-        }
-    }
 
 }

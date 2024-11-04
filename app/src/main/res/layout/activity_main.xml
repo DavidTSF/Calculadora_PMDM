@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="169dp" />
+        app:layout_constraintGuide_begin="177dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -195,6 +195,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="parent" />
 
+
     <Button
         android:id="@+id/buttonOperatorPlus"
         style="@style/botonrecto"
@@ -204,13 +205,62 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="5dp"
-        android:text="+"
         android:onClick="onOperatorButtonClick"
+        android:text="+"
         app:cornerRadius="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonOperatorCalculate"
+        app:layout_constraintBottom_toTopOf="@+id/buttonOperatorDivide"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonOperatorMinus"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <Button
+        android:id="@+id/buttonOperatorMinus"
+        style="@style/botonrecto"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:onClick="onOperatorButtonClick"
+        android:text="-"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonOperatorMulti"
+        app:layout_constraintEnd_toStartOf="@+id/buttonOperatorPlus"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <Button
+        android:id="@+id/buttonOperatorDivide"
+        style="@style/botonrecto"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:onClick="onOperatorButtonClick"
+        android:text="/"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonOperatorMulti"
+        app:layout_constraintTop_toBottomOf="@+id/buttonOperatorPlus" />
+
+    <Button
+        android:id="@+id/buttonOperatorMulti"
+        style="@style/botonrecto"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:onClick="onOperatorButtonClick"
+        android:text="*"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintEnd_toStartOf="@+id/buttonOperatorDivide"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/buttonOperatorMinus" />
 
     <Button
         android:id="@+id/buttonOperatorCalculate"
@@ -221,13 +271,13 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="5dp"
-        android:text="="
         android:onClick="onCalculateButton"
+        android:text="="
         app:cornerRadius="0dp"
         app:layout_constraintBottom_toTopOf="@+id/buttonOperatorClear"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/buttonOperatorPlus" />
+        app:layout_constraintTop_toTopOf="@+id/guideline4" />
 
     <Button
         android:id="@+id/buttonOperatorClear"
@@ -237,8 +287,8 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="10dp"
-        android:text="C"
         android:onClick="onClearButton"
+        android:text="C"
         app:cornerRadius="0dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
@@ -260,14 +310,23 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
+        android:background="#F0E8E8"
         android:elegantTextHeight="false"
         android:textAlignment="textEnd"
+        android:textColor="#000000"
         android:textDirection="locale"
-        android:textSize="16sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="294dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

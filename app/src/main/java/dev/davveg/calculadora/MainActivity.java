@@ -36,15 +36,10 @@ public class MainActivity extends AppCompatActivity {
             tv.setText("");
             hasCalculated = false;
         }
-
-
-
         Button button = findViewById(v.getId());
         String t = tv.getText().toString() + button.getText().toString() ;
 
         tv.setText(  t );
-
-        System.out.println(v.getId());
     }
 
     public void onOperatorButtonClick ( View v ) {
@@ -54,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         }
         if ( !(tv.length() == 0) && !(tv.getText().charAt(tv.length() - 1) == '+') ) {
             Button button = findViewById(v.getId());
-            String t = tv.getText().toString() + button.getText().toString() ;
+            String t = tv.getText().toString() + button.getText().toString();
             tv.setText( t );
         }
     }
@@ -62,11 +57,15 @@ public class MainActivity extends AppCompatActivity {
     public void onCalculateButton( View view ) {
         TextView tv = findViewById(R.id.outputScreen);
         String cadena = tv.getText().toString();
+
+        if ( tv.length() == 0 ) {
+            return;
+        }
         if ( tv.getText().charAt( tv.length() - 1 ) == '+' ) {
             cadena = cadena.substring( 0, cadena.length() - 1 );
         }
-        int result = Calculator.calcular( cadena );
-        tv.setText( String.valueOf(result) );
+        double result = Calculator.calcular( cadena );
+        tv.setText( String.format("%.5f", result) );
         hasCalculated = true;
     }
 
