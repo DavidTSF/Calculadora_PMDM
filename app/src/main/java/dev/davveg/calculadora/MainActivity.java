@@ -65,23 +65,11 @@ public class MainActivity extends AppCompatActivity {
         if ( tv.getText().charAt( tv.length() - 1 ) == '+' ) {
             cadena = cadena.substring( 0, cadena.length() - 1 );
         }
-        int result = calcular( cadena );
+        int result = Calculator.calcular( cadena );
         tv.setText( String.valueOf(result) );
         hasCalculated = true;
     }
 
-    public int calcular(String cadena) {
-        if ( cadena.contains("+") ) {
-            System.out.println("Contiene +! -> Cadena ->" + cadena);
-            String[] cadenas = cadena.split("\\+",2);
-            System.out.println("");
-            int num1 = calcular(cadenas[0]);
-            int num2 = calcular(cadenas[1]);
-            return num1+num2;
-        } else {
-            return Integer.parseInt(cadena.trim());
-        }
-    }
 
     public void onClearButton(View view) {
         TextView tv = findViewById(R.id.outputScreen);
